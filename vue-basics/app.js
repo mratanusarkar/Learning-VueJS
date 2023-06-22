@@ -5,7 +5,8 @@ const app = Vue.createApp({
         return {
             book: "The Hitchhiker's Guide to the Galaxy",
             author: "Douglas Adams",
-            year: 1996
+            year: 1996,
+            hits: 0
         }
     }
 })

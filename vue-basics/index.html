@@ -13,6 +13,13 @@
         <h2>Books & Authors</h2>
         <h3>{{ book }}</h3>
         <p>by : {{ author }} - (year : {{ year }})</p>
+
+        <br>
+        <p>hits: {{ hits }}</p>
+        <br>
+
+        <button v-on:click="hits++">Increase Hit</button>
+        <button v-on:click="hits--">Decrease Hit</button>
     </div>
     
     <script src="app.js"></script>
