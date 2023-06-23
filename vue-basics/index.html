@@ -10,9 +10,15 @@
 <body>
     <h1>Hello, Vue!</h1>
     <div id="app">
-        <h2>Books & Authors</h2>
-        <h3>{{ book }}</h3>
-        <p>by : {{ author }} - (year : {{ year }})</p>
+        <div v-if="showBooks">
+            <h2>Books & Authors</h2>
+            <h3>{{ book }}</h3>
+            <p>by : {{ author }} - (year : {{ year }})</p>
+        </div>
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else>Show Books</span>
+        </button>
 
         <br>
         <p>hits: {{ hits }}</p>
@@ -21,12 +27,15 @@
         <button v-on:click="hits++">Increase Hit</button>
         <button v-on:click="hits--">Decrease Hit</button>
 
-        <br>
-        <br>
-        <div @click="divOnClick(hits)">Click Me!</div>
-        <br>
-        <p>| step: ({{ hits }}) | current counter: ({{ click_counter }}) |</p>
-        <br>
+        <div v-show="hits != 0">
+            <br>
+            <br>
+            <div @click="divOnClick(hits)">Click Me!</div>
+            <br>
+            <p>| step: ({{ hits }}) | current counter: ({{ click_counter }}) |</p>
+            <br>
+        </div>
+        
     </div>
     
     <script src="app.js"></script>
