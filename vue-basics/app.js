@@ -6,7 +6,14 @@ const app = Vue.createApp({
             book: "The Hitchhiker's Guide to the Galaxy",
             author: "Douglas Adams",
             year: 1996,
-            hits: 0
+            hits: 0,
+            click_counter: 0
+        }
+    },
+    methods: {
+        divOnClick(step) {
+            console.log("using @click, the div was clicked!", this.click_counter);
+            this.click_counter += step
         }
     }
 })

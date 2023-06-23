@@ -20,6 +20,13 @@
 
         <button v-on:click="hits++">Increase Hit</button>
         <button v-on:click="hits--">Decrease Hit</button>
+
+        <br>
+        <br>
+        <div @click="divOnClick(hits)">Click Me!</div>
+        <br>
+        <p>| step: ({{ hits }}) | current counter: ({{ click_counter }}) |</p>
+        <br>
     </div>
     
     <script src="app.js"></script>
