@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Vue</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Hello, Vue!</h1>
@@ -34,6 +35,15 @@
             <br>
             <p>| step: ({{ hits }}) | current counter: ({{ click_counter }}) |</p>
             <br>
+        </div>
+
+        <br>
+        <div>
+            <!-- mouse events -->
+            <div class="box" @mouseover="handleMouseEvent($event, 1)">mouse over (enter)</div>
+            <div class="box" @mouseleave="handleMouseEvent($event, 2)">mouse leave (exit)</div>
+            <div class="box" @dblclick="handleMouseEvent($event, 3)">double click</div>
+            <div class="box" @mousemove="handleMouseMove">mouse movement ({{ mouse_x }}, {{ mouse_y }})</div>
         </div>
         
     </div>
