@@ -53,6 +53,9 @@ const app = Vue.createApp({
         toggleShowBooks() {
             this.showBooks = !this.showBooks
         },
+        toggleFav(book) {
+            book.is_fav = !book.is_fav
+        },
         divOnClick(step) {
             console.log("using @click, the div was clicked!", this.click_counter);
             this.click_counter += step
