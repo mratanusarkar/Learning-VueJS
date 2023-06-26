@@ -21,6 +21,19 @@
                     <p>published on : {{ book.year }}</p>
                 </li>
             </ul>
+
+            <br>
+
+            <div>
+                <h2>List of Favorite Books:</h2>
+                <p v-for="favBook in filteredBooks">
+                    - {{ favBook.title }}
+                </p>
+            </div>
+
+            <br>
+            <br>
+
         </div>
         <button @click="toggleShowBooks">
             <span v-if="showBooks">Hide Books</span>

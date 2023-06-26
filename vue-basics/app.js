@@ -67,6 +67,11 @@ const app = Vue.createApp({
             this.mouse_x = event.offsetX;
             this.mouse_y = event.offsetY;
         }
+    },
+    computed: {
+        filteredBooks() {
+            return this.books.filter((book) => book.is_fav)
+        }
     }
 })
 
