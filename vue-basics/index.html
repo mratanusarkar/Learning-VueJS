@@ -13,8 +13,12 @@
     <div id="app">
         <div v-if="showBooks">
             <h2>Books & Authors</h2>
-            <h3>{{ book }}</h3>
-            <p>by : {{ author }} - (year : {{ year }})</p>
+            <ul>
+                <li v-for="book in books">
+                    <h3>{{ book.title }}</h3>
+                    <p>by : <b>{{ book.author }}</b>, published on : {{ book.year }}</p>
+                </li>
+            </ul>
         </div>
         <button @click="toggleShowBooks">
             <span v-if="showBooks">Hide Books</span>

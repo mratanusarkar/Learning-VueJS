@@ -4,9 +4,13 @@ const app = Vue.createApp({
     data() {
         return {
             showBooks: true,
-            book: "The Hitchhiker's Guide to the Galaxy",
-            author: "Douglas Adams",
-            year: 1996,
+            books: [
+                { title: "The Hitchhiker's Guide to the Galaxy", author: "Douglas Adams", year: 1996 },
+                { title: "The Name of the Wind", author: "Patrick Rothfuss", year: 2007 },
+                { title: "The Way of Kings", author: "Brandon Sanderson", year: 2010 },
+                { title: "The Three-Body Problem", author: "Liu Cixin", year: 2008 },
+                { title: "Children of Time", author: "Adrian Tchaikovsky", year: 2013 }
+            ],
             hits: 0,
             click_counter: 0,
             mouse_x: 0,
