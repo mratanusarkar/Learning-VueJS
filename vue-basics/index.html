@@ -15,6 +15,7 @@
             <h2>Books & Authors</h2>
             <ul>
                 <li v-for="book in books">
+                    <img :src="book.cover_img" alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>by : <b>{{ book.author }}</b>, published on : {{ book.year }}</p>
                 </li>
@@ -48,6 +49,11 @@
             <div class="box" @mouseleave="handleMouseEvent($event, 2)">mouse leave (exit)</div>
             <div class="box" @dblclick="handleMouseEvent($event, 3)">double click</div>
             <div class="box" @mousemove="handleMouseMove">mouse movement ({{ mouse_x }}, {{ mouse_y }})</div>
+        </div>
+
+        <div>
+            | <a v-bind:href="src_url">Source Code</a> |
+            | <a :href="credit_url">Project Credit</a> |
         </div>
         
     </div>
