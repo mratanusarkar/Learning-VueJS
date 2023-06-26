@@ -17,7 +17,8 @@
                 <li v-for="book in books">
                     <img :src="book.cover_img" alt="book.title">
                     <h3>{{ book.title }}</h3>
-                    <p>by : <b>{{ book.author }}</b>, published on : {{ book.year }}</p>
+                    <p>by : <b>{{ book.author }}</b></p>
+                    <p>published on : {{ book.year }}</p>
                 </li>
             </ul>
         </div>
@@ -27,11 +28,18 @@
         </button>
 
         <br>
-        <p>hits: {{ hits }}</p>
+        <br>
         <br>
 
-        <button v-on:click="hits++">Increase Hit</button>
-        <button v-on:click="hits--">Decrease Hit</button>
+        <div>
+            <br>
+            <p>hits: {{ hits }}</p>
+            <br>
+
+            <button v-on:click="hits--">Decrease Hit</button>
+            <button v-on:click="hits++">Increase Hit</button>
+        </div>
+        
 
         <div v-show="hits != 0">
             <br>
@@ -43,6 +51,7 @@
         </div>
 
         <br>
+
         <div>
             <!-- mouse events -->
             <div class="box" @mouseover="handleMouseEvent($event, 1)">mouse over (enter)</div>
@@ -51,7 +60,12 @@
             <div class="box" @mousemove="handleMouseMove">mouse movement ({{ mouse_x }}, {{ mouse_y }})</div>
         </div>
 
-        <div>
+        <br>
+        <br>
+        <br>
+        <hr>
+
+        <div class="footer">
             | <a v-bind:href="src_url">Source Code</a> |
             | <a :href="credit_url">Project Credit</a> |
         </div>
