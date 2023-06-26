@@ -9,31 +9,36 @@ const app = Vue.createApp({
                     title: "The Hitchhiker's Guide to the Galaxy",
                     author: "Douglas Adams",
                     year: 1996,
-                    cover_img: "https://covers.openlibrary.org/b/id/12986869-M.jpg"
+                    cover_img: "https://covers.openlibrary.org/b/id/12986869-S.jpg",
+                    is_fav: true
                 },
                 {
                     title: "The Name of the Wind",
                     author: "Patrick Rothfuss",
                     year: 2007,
-                    cover_img: "https://covers.openlibrary.org/b/id/12391248-M.jpg"
+                    cover_img: "https://covers.openlibrary.org/b/id/12391248-S.jpg",
+                    is_fav: false
                 },
                 {
                     title: "The Way of Kings",
                     author: "Brandon Sanderson",
                     year: 2010,
-                    cover_img: "https://covers.openlibrary.org/b/id/7429768-M.jpg"
+                    cover_img: "https://covers.openlibrary.org/b/id/7429768-S.jpg",
+                    is_fav: false
                 },
                 {
                     title: "The Three-Body Problem",
                     author: "Liu Cixin",
                     year: 2008,
-                    cover_img: "https://covers.openlibrary.org/b/id/9157544-M.jpg"
+                    cover_img: "https://covers.openlibrary.org/b/id/9157544-S.jpg",
+                    is_fav: true
                 },
                 {
                     title: "Children of Time",
                     author: "Adrian Tchaikovsky",
                     year: 2013,
-                    cover_img: "https://covers.openlibrary.org/b/id/10157457-M.jpg"
+                    cover_img: "https://covers.openlibrary.org/b/id/10157457-S.jpg",
+                    is_fav: true
                 },
             ],
             hits: 0,
