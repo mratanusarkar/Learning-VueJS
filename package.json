@@ -1,0 +1,26 @@
+{
+  "name": "learning-vuejs",
+  "version": "1.0.0",
+  "description": "A series of Vue JS files coded and created while learning from the YouTube channel: \"The Net Ninja\" with some personal touch!",
+  "main": "index.js",
+  "dependencies": {
+    "@vue/cli": "^5.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mratanusarkar/Learning-VueJS.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "Atanu Sarkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mratanusarkar/Learning-VueJS/issues"
+  },
+  "homepage": "https://github.com/mratanusarkar/Learning-VueJS#readme"
+}
