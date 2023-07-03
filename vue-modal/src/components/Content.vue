@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 h1 {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
