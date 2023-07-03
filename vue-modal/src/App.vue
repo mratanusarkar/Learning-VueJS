@@ -1,15 +1,18 @@
 <template>
   <!-- Vue 3 now allows us to have multiple elements inside the root template -->
   <Content/>
+  <Modal/>
 </template>
 
 <script>
 import Content from './components/Content.vue';
+import Modal from './components/Modal.vue';
 
 export default {
   name: 'App',
   components: {
-    Content
+    Content,
+    Modal
   },
 }
 </script>
