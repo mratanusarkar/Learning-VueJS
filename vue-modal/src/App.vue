@@ -1,7 +1,7 @@
 <template>
   <!-- Vue 3 now allows us to have multiple elements inside the root template -->
   <Content/>
-  <Modal/>
+  <Modal :header="mHeader" :content="mContent" theme="dark"/>
 </template>
 
 <script>
@@ -14,6 +14,12 @@ export default {
     Content,
     Modal
   },
+  data() {
+    return {
+      mHeader: 'Modal Title',
+      mContent: 'here is a sample modal text content'
+    }
+  }
 }
 </script>
 
