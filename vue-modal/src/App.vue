@@ -2,7 +2,17 @@
   <!-- Vue 3 now allows us to have multiple elements inside the root template -->
   <Content/>
   <div v-if="showModal">
-    <Modal :header="mHeader" :content="mContent" :theme="mTheme" @closemodal="toggleModal"/>
+    <Modal :theme="mTheme" @closemodal="toggleModal">
+      <!-- default slot content -->
+      <h1>{{ mHeader }}</h1>
+      <p>{{ mContent }}</p>
+
+      <!-- named slot: inject named template -->
+      <template v-slot:links>
+        <a href="https://github.com/mratanusarkar/Learning-VueJS">source code</a>
+        <a href="https://netninja.dev/">project credits</a>
+      </template>
+    </Modal>
   </div>
   <div class="modal-btns">
     <button @click="toggleModal">open lite modal</button>
