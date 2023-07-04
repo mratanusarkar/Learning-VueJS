@@ -2,7 +2,7 @@
   <img alt="Vue logo" src="../assets/logo.png">
   <h1>{{ title }}</h1>
   <input type="text" ref="name">
-  <button @click="handleButtonClick">click me</button>
+  <button @click="handleButtonClick" @click.ctrl="resetTextbox">click me</button>
   <h3 @click="handleH3Click">Last Entry: {{ data }}</h3>
 </template>
 
@@ -33,6 +33,10 @@ export default {
     handleH3Click() {
       // we can also access other normal javascript methods & functions
       this.$refs.name.focus()
+    },
+    resetTextbox() {
+      this.$refs.name.classList.remove('pass')
+      this.$refs.name.classList.remove('fail')
     }
   }
 }
