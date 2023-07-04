@@ -1,7 +1,13 @@
 <template>
   <!-- Vue 3 now allows us to have multiple elements inside the root template -->
   <Content/>
-  <Modal :header="mHeader" :content="mContent" theme="dark"/>
+  <div v-if="showModal">
+    <Modal :header="mHeader" :content="mContent" :theme="mTheme" @closemodal="toggleModal"/>
+  </div>
+  <div class="modal-btns">
+    <button @click="toggleModal">open lite modal</button>
+    <button @click="toggleModal('dark')">open dark modal</button>
+  </div>
 </template>
 
 <script>
@@ -17,7 +23,15 @@ export default {
   data() {
     return {
       mHeader: 'Modal Title',
-      mContent: 'here is a sample modal text content'
+      mContent: 'here is a sample modal text content',
+      mTheme: 'lite',
+      showModal: false
+    }
+  },
+  methods: {
+    toggleModal(theme) {
+      this.showModal = !this.showModal;
+      this.mTheme = theme ? theme : 'lite'
     }
   }
 }
@@ -31,5 +45,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.modal-btns {
+  margin: 20px;
+  padding: 30px;
 }
 </style>
