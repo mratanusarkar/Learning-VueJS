@@ -1,7 +1,9 @@
 /** @type {import('vls').VeturConfig} */
 module.exports = {
     projects: [
-        './vue-modal'
+        './vue-01-basics',
+        './vue-02-modal',
+        './vue-03-project01'
     ]
 }
 
