@@ -1,13 +1,30 @@
 <template>
   <form>
     <label>Email</label>
-    <input type="email" required>
+    <input type="email" required v-model="email">
+
+    <label>Password</label>
+    <input type="password" required v-model="password">
   </form>
+
+  <div>
+    <h3>Demo 2-Way Data Binding:</h3>
+    <div>
+      <p>Email: {{ email }}</p>
+      <p>Password: {{ password }}</p>
+    </div>
+    
+  </div>
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      email: 'dummy@email.com',
+      password: ''
+    }
+  }
 }
 </script>
 
