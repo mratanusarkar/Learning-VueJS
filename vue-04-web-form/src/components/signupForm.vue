@@ -13,6 +13,20 @@
       <option value="member">Member</option>
       <option value="user">User</option>
     </select>
+
+    <div class="purpose">
+      <input type="checkbox" value="artist" v-model="purpose">
+      <label>Artist</label>
+      <input type="checkbox" value="engineer" v-model="purpose">
+      <label>Engineer</label>
+      <input type="checkbox" value="researcher" v-model="purpose">
+      <label>Researcher</label>
+    </div>
+
+    <div class="terms">
+      <input type="checkbox" required v-model="terms">
+      <label>Accept terms and conditions</label>
+    </div>
   </form>
 
   <div>
@@ -21,6 +35,8 @@
       <p>Email: {{ email }}</p>
       <p>Password: {{ password }}</p>
       <p>Role: {{ role }}</p>
+      <p>Terms Accepted: {{ terms }}</p>
+      <p>Purpose: {{ purpose }}</p>
     </div>
   </div>
 </template>
@@ -31,7 +47,9 @@ export default {
     return {
       email: 'dummy@email.com',
       password: '',
-      role: 'member'
+      role: 'member',
+      terms: false,
+      purpose: []
     }
   }
 }
@@ -63,5 +81,18 @@ input, select {
   border: none;
   border-bottom: 1px solid #ddd;
   color: #555;
+}
+input[type="checkbox"] {
+  display: inline-block;
+  width: 16px;
+  margin: 0 10px 0 0;
+  position: relative;
+  top: 2px;
+}
+.purpose input {
+  margin: 0;
+}
+.purpose label {
+  margin: 25px 20px 15px 10px;
 }
 </style>
