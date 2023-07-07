@@ -17,7 +17,7 @@
     <label>Skills</label>
     <input type="text" v-model="tempSkill" @keyup="addSkill">
     <div v-for="skill in skills" :key="skill" class="pill">
-      {{ skill }}
+      <span @click="deleteSkill(skill)">{{ skill }}</span>
     </div>
 
 
@@ -70,6 +70,13 @@ export default {
         }
         this.tempSkill = ''
       }
+    },
+    deleteSkill(skill) {
+      // delete only the first occurence
+      // this.skills.splice(this.skills.indexOf(skill), 1)
+
+      // delete all occurrences
+      this.skills = this.skills.filter(e => e !== skill);
     }
   }
 }
