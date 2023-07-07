@@ -14,6 +14,13 @@
       <option value="user">User</option>
     </select>
 
+    <label>Skills</label>
+    <input type="text" v-model="tempSkill" @keyup="addSkill">
+    <div v-for="skill in skills" :key="skill" class="pill">
+      {{ skill }}
+    </div>
+
+
     <div class="purpose">
       <input type="checkbox" value="artist" v-model="purpose">
       <label>Artist</label>
@@ -49,7 +56,20 @@ export default {
       password: '',
       role: 'member',
       terms: false,
+      tempSkill: '',
+      skills: [],
       purpose: []
+    }
+  },
+  methods: {
+    addSkill(e) {
+      if ((e.key === ',' || e.key === 'Enter') && this.tempSkill) {
+        this.tempSkill = this.tempSkill.replaceAll(',', '').trim()
+        if (!this.skills.includes(this.tempSkill)) {
+          this.skills.push(this.tempSkill)
+        }
+        this.tempSkill = ''
+      }
     }
   }
 }
@@ -94,5 +114,17 @@ input[type="checkbox"] {
 }
 .purpose label {
   margin: 25px 20px 15px 10px;
+}
+.pill {
+  display: inline-block;
+  margin: 20px 10px 0 0;
+  padding: 6px 12px;
+  background: #eee;
+  border-radius: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #777;
+  cursor: pointer;
 }
 </style>
