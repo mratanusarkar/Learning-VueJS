@@ -19,7 +19,7 @@ export default {
     return {
       isPlaying: false,
       delay: null,
-      score: '0',
+      score: 0,
       showResults: false
     }
   },
@@ -30,7 +30,7 @@ export default {
       this.showResults = false
     },
     endgame(data) {
-      this.score = String(parseInt(data))
+      this.score = parseInt(data)
       this.isPlaying = false
       this.showResults = true
     }
@@ -46,5 +46,20 @@ export default {
   text-align: center;
   color: #444;
   margin-top: 60px;
+}
+button {
+  background: #0faf87;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin: 10px;
+}
+button[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 </style>
