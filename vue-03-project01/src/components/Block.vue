@@ -43,6 +43,7 @@ export default {
     stopTimer() {
       clearInterval(this.timer)
       console.log('reaction time:', this.reactionTime);
+      this.$emit('gameover', this.reactionTime)
     }
   }
 }
