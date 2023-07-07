@@ -46,6 +46,11 @@ export default {
   text-align: center;
   color: #444;
   margin-top: 60px;
+  user-select: none; /* standard syntax */
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
 }
 button {
   background: #0faf87;
