@@ -40,24 +40,13 @@
       <button>Create Account</button>
     </div>
   </form>
-
-  <div>
-    <h3>Demo 2-Way Data Binding:</h3>
-    <div>
-      <p>Email: {{ email }}</p>
-      <p>Password: {{ password }}</p>
-      <p>Role: {{ role }}</p>
-      <p>Terms Accepted: {{ terms }}</p>
-      <p>Purpose: {{ purpose }}</p>
-    </div>
-  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      email: 'dummy@email.com',
+      email: '',
       password: '',
       role: 'member',
       tempSkill: '',
