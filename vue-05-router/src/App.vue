@@ -1,9 +1,7 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link :to="{ name: 'About' }">About</router-link> |
-    <a href="/about">href-link-about</a>
-    <a href="https://github.com/mratanusarkar/Learning-VueJS">link-to-github</a>
+    <router-link :to="{ name: 'About' }">About</router-link>
   </nav>
   <router-view/>
 </template>
