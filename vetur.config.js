@@ -4,7 +4,8 @@ module.exports = {
         './vue-01-basics',
         './vue-02-modal',
         './vue-03-project01',
-        './vue-04-web-form'
+        './vue-04-web-form',
+        './vue-05-router'
     ]
 }
 
