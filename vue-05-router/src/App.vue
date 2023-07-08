@@ -1,7 +1,9 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link :to="{ name: 'About' }">About</router-link> |
+    <a href="/about">href-link-about</a>
+    <a href="https://github.com/mratanusarkar/Learning-VueJS">link-to-github</a>
   </nav>
   <router-view/>
 </template>
@@ -22,9 +24,13 @@ nav {
 nav a {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
+  padding: 10px;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: white;
+  background: crimson;
+  border-radius: 4px;
 }
 </style>
