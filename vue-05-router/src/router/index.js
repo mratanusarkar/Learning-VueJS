@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
+// import AboutView from '../views/AboutView.vue'
 import JobsView from '../views/jobs/JobsView.vue'
 import JobDetailsView from '../views/jobs/JobDetailsView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
@@ -14,7 +14,10 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: AboutView
+    // lazy loading to load component only when the user visits the route
+    // and not initially, all together when the home page is loading.
+    // this helps reduce the js bundle size in prod and other memory benefits. 
+    component: () => import('../views/AboutView.vue')
   },
   {
     path: '/jobs',
