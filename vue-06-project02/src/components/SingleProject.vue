@@ -1,9 +1,11 @@
 <template>
   <div class="project">
     <div class="actions">
-      <h3>{{ project.title }}</h3>
+      <h3 @click="showDetails = !showDetails">
+        {{ project.title }}
+      </h3>
     </div>
-    <div class="details">
+    <div v-if="showDetails" class="details">
       <p>{{ project.details }}</p>
     </div>
   </div>
@@ -11,7 +13,12 @@
 
 <script>
 export default {
-  props: ['project']
+  props: ['project'],
+  data() {
+    return {
+      showDetails: false
+    }
+  }
 }
 </script>
 
