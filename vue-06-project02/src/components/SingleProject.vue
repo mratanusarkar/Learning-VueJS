@@ -6,7 +6,9 @@
       </h3>
       <div class="icons">
         <span @click="completeProject" class="material-icons tick">done</span>
-        <span @click="" class="material-icons">edit</span>
+        <router-link :to="{ name: 'EditProject', params: { id: project.id }}">
+          <span @click="" class="material-icons">edit</span>
+        </router-link>
         <span @click="deleteProject" class="material-icons">delete</span>
       </div>
     </div>
