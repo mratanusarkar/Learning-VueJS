@@ -5,9 +5,9 @@
         {{ project.title }}
       </h3>
       <div class="icons">
-        <span class="material-icons">done</span>
-        <span class="material-icons">edit</span>
-        <span class="material-icons">delete</span>
+        <span @click="" class="material-icons">done</span>
+        <span @click="" class="material-icons">edit</span>
+        <span @click="deleteProject" class="material-icons">delete</span>
       </div>
     </div>
     <div v-if="showDetails" class="details">
@@ -21,7 +21,18 @@ export default {
   props: ['project'],
   data() {
     return {
-      showDetails: false
+      showDetails: false,
+      uri: 'http://localhost:3000/projects/' + this.project.id
+    }
+  },
+  methods: {
+    deleteProject() {
+      fetch(this.uri, { method: 'DELETE' })
+      .then(res => {
+        console.log('Delete Response Status:', res.statusText)
+        res.ok ? this.$emit('delete', this.project.id) : null
+      })
+      .catch(err => console.log(err.message))
     }
   }
 }
