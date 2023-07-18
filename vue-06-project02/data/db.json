@@ -2,62 +2,23 @@
   "projects": [
     {
       "id": 1,
-      "title": "Create new homepage banner",
-      "details": "design a banner for the homepage. it should follow the company theme and logo",
+      "title": "Sample ToDo Project",
+      "details": "This is a dummy Project, Task, Topic that needs to be done.",
+      "ongoing": false,
       "complete": false
     },
     {
       "id": 2,
-      "title": "Make marketing email",
-      "details": "draft out an email for the marketing team, goal 01",
-      "complete": true
+      "title": "Sample Ongoing Project",
+      "details": "This is a dummy Project, Task, Topic that is ongoing.",
+      "ongoing": true,
+      "complete": false
     },
     {
       "id": 3,
-      "title": "Design UI for mobile app",
-      "details": "we need a clean and modern design for our new mobile application",
-      "complete": false
-    },
-    {
-      "id": 4,
-      "title": "Data analysis for user trends",
-      "details": "Analyze user data to identify trends and user behaviour for the past quarter",
-      "complete": true
-    },
-    {
-      "id": 5,
-      "title": "Update backend APIs",
-      "details": "Optimize the existing APIs and document any changes made",
-      "complete": false
-    },
-    {
-      "id": 6,
-      "title": "Refactor codebase",
-      "details": "Review the entire codebase and refactor for efficiency and readability",
-      "complete": false
-    },
-    {
-      "id": 7,
-      "title": "Organize team building event",
-      "details": "Plan and schedule a team building event for the upcoming quarter",
-      "complete": true
-    },
-    {
-      "id": 8,
-      "title": "Redesign logo",
-      "details": "The company logo needs a fresh, modern redesign",
-      "complete": false
-    },
-    {
-      "id": 9,
-      "title": "Write copy for landing page",
-      "details": "We need compelling and concise copy for our new product landing page",
-      "complete": true
-    },
-    {
-      "id": 10,
-      "title": "Customer support training",
-      "details": "Conduct a training session for the customer support team on new product features",
+      "title": "Sample Completed Project",
+      "details": "This is a dummy Project, Task, Topic that is completed!",
+      "ongoing": false,
       "complete": true
     }
   ]
