@@ -6,7 +6,8 @@ module.exports = {
         './vue-03-project01',
         './vue-04-web-form',
         './vue-05-router',
-        './vue-06-project02'
+        './vue-06-project02',
+        './vue-07-comp-api'
     ]
 }
 
