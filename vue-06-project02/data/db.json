@@ -2,21 +2,21 @@
   "projects": [
     {
       "id": 1,
-      "title": "Sample ToDo Project",
+      "title": "sample todo project",
       "details": "This is a dummy Project, Task, Topic that needs to be done.",
       "ongoing": false,
       "complete": false
     },
     {
       "id": 2,
-      "title": "Sample Ongoing Project",
+      "title": "sample ongoing project",
       "details": "This is a dummy Project, Task, Topic that is ongoing.",
       "ongoing": true,
       "complete": false
     },
     {
       "id": 3,
-      "title": "Sample Completed Project",
+      "title": "sample completed project",
       "details": "This is a dummy Project, Task, Topic that is completed!",
       "ongoing": false,
       "complete": true

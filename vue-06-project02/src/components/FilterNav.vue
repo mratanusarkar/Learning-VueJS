@@ -3,6 +3,9 @@
     <button @click="updateFilter('all')" :class="{ active: current === 'all' }">
       View All
     </button>
+    <button @click="updateFilter('todo')" :class="{ active: current === 'todo' }">
+      TODO
+    </button>
     <button @click="updateFilter('ongoing')" :class="{ active: current === 'ongoing' }">
       Ongoing
     </button>

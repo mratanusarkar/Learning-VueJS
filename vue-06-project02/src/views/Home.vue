@@ -3,7 +3,7 @@
     <FilterNav :current="current" @filterChange="current=$event"/>
     <div v-if="filteredProjects.length">
       <div v-for="project in filteredProjects" :key="project.id">
-        <SingleProject :project="project" @complete="handleComplete" @delete="handleDelete"/>
+        <SingleProject :project="project" @complete="handleComplete" @ongoing="handleOngoing" @delete="handleDelete"/>
       </div>
     </div>
   </div>
@@ -37,6 +37,14 @@ export default {
         return project.id === id
       })
       pj.complete = !pj.complete
+      pj.ongoing = false
+    },
+    handleOngoing(id) {
+      let pj = this.projects.find(project => {
+        return project.id === id
+      })
+      pj.ongoing = !pj.ongoing
+      pj.complete = false
     },
     handleDelete(id) {
       this.projects = this.projects.filter((project) => {
@@ -46,11 +54,14 @@ export default {
   },
   computed: {
     filteredProjects() {
+      if (this.current === 'todo') {
+        return this.projects.filter(project => !project.ongoing && !project.complete)
+      }
       if (this.current === 'completed') {
         return this.projects.filter(project => project.complete)
       }
       if (this.current === 'ongoing') {
-        return this.projects.filter(project => !project.complete)
+        return this.projects.filter(project => project.ongoing)
       }
       return this.projects
     }

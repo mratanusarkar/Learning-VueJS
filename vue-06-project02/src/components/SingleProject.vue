@@ -1,15 +1,16 @@
 <template>
-  <div class="project" :class="{ complete: project.complete }">
+  <div class="project" :class="{ complete: project.complete, ongoing: project.ongoing }">
     <div class="actions">
       <h3 @click="showDetails = !showDetails">
         {{ project.title }}
       </h3>
       <div class="icons">
-        <span @click="completeProject" class="material-icons tick">done</span>
         <router-link :to="{ name: 'EditProject', params: { id: project.id }}">
           <span @click="" class="material-icons">edit</span>
         </router-link>
         <span @click="deleteProject" class="material-icons">delete</span>
+        <span @click="ongoingProject" class="material-icons progress">hourglass_empty</span>
+        <span @click="completeProject" class="material-icons tick">done</span>
       </div>
     </div>
     <div v-if="showDetails" class="details">
@@ -32,11 +33,23 @@ export default {
       fetch(this.uri, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ complete: !this.project.complete })
+        body: JSON.stringify({ complete: !this.project.complete, ongoing: false })
       })
       .then(res => {
         console.log('Patch Response Status:', res.statusText)
         res.ok ? this.$emit('complete', this.project.id) : null
+      })
+      .catch(err => console.log(err))
+    },
+    ongoingProject() {
+      fetch(this.uri, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ongoing: !this.project.ongoing, complete: false })
+      })
+      .then(res => {
+        console.log('Patch Response Status:', res.statusText)
+        res.ok ? this.$emit('ongoing', this.project.id) : null
       })
       .catch(err => console.log(err))
     },
@@ -77,6 +90,15 @@ h3 {
 }
 .material-icons:hover {
   color: #777;
+}
+.project.ongoing {
+  border-left: 4px solid #ee8f00;
+}
+.project.ongoing .progress {
+  color: #bb700088;
+}
+.project.ongoing .progress:hover {
+  color: #ee8f00;
 }
 .project.complete {
   border-left: 4px solid #00ce89;
