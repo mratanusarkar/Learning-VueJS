@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "start": "npx json-server --watch data/db.json",
     "build": "vue-cli-service build"
   },
   "dependencies": {
