@@ -22,6 +22,7 @@ export default {
       let project = {
         title: this.title,
         details: this.details,
+        ongoing: false,
         complete: false
       }
       
